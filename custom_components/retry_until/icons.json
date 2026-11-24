@@ -1,0 +1,10 @@
+{
+  "services": {
+    "on": {
+      "service": "mdi:repeat"
+    },
+    "off": {
+      "service": "mdi:repeat"
+    }
+  }
+}

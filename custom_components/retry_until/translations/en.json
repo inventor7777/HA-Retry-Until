@@ -1,0 +1,90 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Retry Until",
+        "description": "Add the Retry Until On and Off actions to automations and scripts."
+      }
+    }
+  },
+  "exceptions": {
+    "attempts_exhausted": {
+      "message": "After {attempts} attempts, these entities did not report {state}: {entities}."
+    },
+    "explicit_target_required": {
+      "message": "Choose specific entities, devices, areas, floors, or labels."
+    },
+    "no_targets": {
+      "message": "No entities in the target support the requested power action."
+    },
+    "not_configured": {
+      "message": "Set up or enable the Retry Until integration before running this action."
+    },
+    "unknown_targets": {
+      "message": "These entities could not be found: {entities}."
+    },
+    "unsupported_targets": {
+      "message": "These entities do not support the requested power action: {entities}."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "on_running_count": {
+        "name": "Retry Until On running count"
+      },
+      "off_running_count": {
+        "name": "Retry Until Off running count"
+      }
+    },
+    "event": {
+      "failure": {
+        "name": "Retry Until failure",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "attempts_exhausted": "Attempts exhausted"
+            }
+          }
+        }
+      }
+    }
+  },
+  "services": {
+    "on": {
+      "name": "On",
+      "description": "Repeat the turn-on command until all targeted entities report that they are on.",
+      "fields": {
+        "max_repeats": {
+          "name": "Maximum attempts",
+          "description": "Total number of attempts, including the first."
+        },
+        "retry_interval_seconds": {
+          "name": "Wait per attempt",
+          "description": "Time allowed for command dispatch, then separately for the entities to report the desired state."
+        },
+        "brightness_pct": {
+          "name": "Brightness",
+          "description": "Optional brightness to send when turning on dimmable lights."
+        },
+        "color_temp_kelvin": {
+          "name": "Color temperature",
+          "description": "Optional color temperature to send when turning on lights with color-temperature support. The value is adjusted to each light's reported range."
+        }
+      }
+    },
+    "off": {
+      "name": "Off",
+      "description": "Repeat the turn-off command until all targeted entities report that they are off.",
+      "fields": {
+        "max_repeats": {
+          "name": "Maximum attempts",
+          "description": "Total number of attempts, including the first."
+        },
+        "retry_interval_seconds": {
+          "name": "Wait per attempt",
+          "description": "Time allowed for command dispatch, then separately for the entities to report the desired state."
+        }
+      }
+    }
+  }
+}

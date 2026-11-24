@@ -1,0 +1,13 @@
+{
+  "domain": "retry_until",
+  "name": "Retry Until",
+  "categories": ["helpers"],
+  "codeowners": ["@inventor7777"],
+  "config_flow": true,
+  "documentation": "https://github.com/inventor7777/HA-Retry-Until",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/inventor7777/HA-Retry-Until/issues",
+  "single_config_entry": true,
+  "version": "0.1.0"
+}

@@ -1,0 +1,61 @@
+"on":
+  target: &power_targets
+    entity:
+      domain:
+        - automation
+        - fan
+        - humidifier
+        - input_boolean
+        - light
+        - remote
+        - siren
+        - switch
+  fields:
+    max_repeats: &max_repeats
+      default: 120
+      selector:
+        number:
+          min: 1
+          max: 240
+          mode: box
+    retry_interval_seconds: &retry_interval_seconds
+      default: 60
+      selector:
+        number:
+          min: 1
+          max: 3600
+          mode: box
+          unit_of_measurement: s
+    brightness_pct:
+      filter:
+        attribute:
+          supported_color_modes:
+            - light.ColorMode.BRIGHTNESS
+            - light.ColorMode.COLOR_TEMP
+            - light.ColorMode.HS
+            - light.ColorMode.RGB
+            - light.ColorMode.RGBW
+            - light.ColorMode.RGBWW
+            - light.ColorMode.WHITE
+            - light.ColorMode.XY
+      selector:
+        number:
+          min: 1
+          max: 100
+          mode: box
+          unit_of_measurement: "%"
+    color_temp_kelvin:
+      filter:
+        attribute:
+          supported_color_modes:
+            - light.ColorMode.COLOR_TEMP
+      selector:
+        color_temp:
+          unit: kelvin
+          min: 2000
+          max: 9000
+"off":
+  target: *power_targets
+  fields:
+    max_repeats: *max_repeats
+    retry_interval_seconds: *retry_interval_seconds
