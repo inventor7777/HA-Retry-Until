@@ -30,15 +30,15 @@
   "entity": {
     "sensor": {
       "on_running_count": {
-        "name": "Retry Until On running count"
+        "name": "Retry Until On Running Count"
       },
       "off_running_count": {
-        "name": "Retry Until Off running count"
+        "name": "Retry Until Off Running Count"
       }
     },
     "event": {
       "failure": {
-        "name": "Retry Until failure",
+        "name": "Retry Until Failure",
         "state_attributes": {
           "event_type": {
             "state": {

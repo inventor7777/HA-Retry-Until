@@ -1,4 +1,14 @@
 {
+  "entity": {
+    "sensor": {
+      "on_running_count": {
+        "default": "mdi:power-on"
+      },
+      "off_running_count": {
+        "default": "mdi:power-off"
+      }
+    }
+  },
   "services": {
     "on": {
       "service": "mdi:repeat"
