@@ -1,6 +1,5 @@
-# Retry Until
-
-![Retry Until icon](custom_components/retry_until/brand/icon.png)
+<p align="center"><img src="custom_components/retry_until/brand/icon.png"></p>
+<h1 align="center">Retry Until</h1>
 
 Two Home Assistant actions that repeat an on or off command until the selected entities report the requested state. 
 
